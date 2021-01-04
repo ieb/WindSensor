@@ -86,9 +86,9 @@ Text GLabel 6750 4650 2    60   BiDi ~ 0
 SCL
 Text GLabel 6750 4550 2    60   BiDi ~ 0
 SDA
-Text GLabel 4800 3350 0    60   Output ~ 0
+Text GLabel 4700 3950 0    60   Output ~ 0
 TX
-Text GLabel 4800 3450 0    60   Input ~ 0
+Text GLabel 4700 4050 0    60   Input ~ 0
 RX
 Text GLabel 4700 4150 0    60   Output ~ 0
 DE
@@ -231,7 +231,246 @@ NoConn ~ 5550 2950
 NoConn ~ 5650 2950
 NoConn ~ 5750 2950
 NoConn ~ 5850 2950
-NoConn ~ 5000 3950
+NoConn ~ 5000 3850
+$Comp
+L CONN_1 P1
+U 1 1 5FCE5DF1
+P 4700 5450
+F 0 "P1" H 4780 5450 40  0000 L CNN
+F 1 "SP" H 4700 5505 30  0001 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x01_Pitch2.54mm_SMD_Pin1Left" H 4700 5450 60  0001 C CNN
+F 3 "" H 4700 5450 60  0001 C CNN
+	1    4700 5450
+	1    0    0    -1  
+$EndComp
+NoConn ~ 5000 4250
+$Comp
+L CONN_1 P4
+U 1 1 5FCE66DA
+P 2900 1900
+F 0 "P4" H 2980 1900 40  0000 L CNN
+F 1 "SP" H 2900 1955 30  0001 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x01_Pitch2.54mm_SMD_Pin1Left" H 2900 1900 60  0001 C CNN
+F 3 "" H 2900 1900 60  0001 C CNN
+	1    2900 1900
+	-1   0    0    1   
+$EndComp
+NoConn ~ 5000 4450
+NoConn ~ 10450 2450
+$Comp
+L C C1
+U 1 1 5FCF365C
+P 4300 2250
+F 0 "C1" H 4300 2350 40  0000 L CNN
+F 1 "10nF" H 4306 2165 40  0000 L CNN
+F 2 "Capacitors_SMD:C_0805_HandSoldering" H 4338 2100 30  0001 C CNN
+F 3 "" H 4300 2250 60  0000 C CNN
+	1    4300 2250
+	1    0    0    -1  
+$EndComp
+Text GLabel 5750 5550 0    60   BiDi ~ 0
+SDA
+Text GLabel 5750 5700 0    60   BiDi ~ 0
+SCL
+$Comp
+L CONN_1 P5
+U 1 1 5FCF3996
+P 6150 5550
+F 0 "P5" H 6230 5550 40  0000 L CNN
+F 1 "SDA" H 6150 5605 30  0001 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x01_Pitch2.54mm_SMD_Pin1Left" H 6150 5550 60  0001 C CNN
+F 3 "" H 6150 5550 60  0001 C CNN
+	1    6150 5550
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_1 P6
+U 1 1 5FCF39C7
+P 6150 5700
+F 0 "P6" H 6230 5700 40  0000 L CNN
+F 1 "SCL" H 6150 5755 30  0001 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x01_Pitch2.54mm_SMD_Pin1Left" H 6150 5700 60  0001 C CNN
+F 3 "" H 6150 5700 60  0001 C CNN
+	1    6150 5700
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR07
+U 1 1 5FCF3D37
+P 5600 6050
+F 0 "#PWR07" H 5600 6050 30  0001 C CNN
+F 1 "GND" H 5600 5980 30  0001 C CNN
+F 2 "" H 5600 6050 60  0001 C CNN
+F 3 "" H 5600 6050 60  0001 C CNN
+	1    5600 6050
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_1 P9
+U 1 1 5FCF3D60
+P 6150 5950
+F 0 "P9" H 6230 5950 40  0000 L CNN
+F 1 "GND" H 6150 6005 30  0001 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x01_Pitch2.54mm_SMD_Pin1Left" H 6150 5950 60  0001 C CNN
+F 3 "" H 6150 5950 60  0001 C CNN
+	1    6150 5950
+	1    0    0    -1  
+$EndComp
+Text GLabel 4300 5650 0    60   Input ~ 0
+5V
+$Comp
+L CONN_1 P7
+U 1 1 5FCF3E5D
+P 4700 5650
+F 0 "P7" H 4780 5650 40  0000 L CNN
+F 1 "5V" H 4700 5705 30  0001 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x01_Pitch2.54mm_SMD_Pin1Left" H 4700 5650 60  0001 C CNN
+F 3 "" H 4700 5650 60  0001 C CNN
+	1    4700 5650
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR08
+U 1 1 5FCF3F31
+P 4200 5900
+F 0 "#PWR08" H 4200 5900 30  0001 C CNN
+F 1 "GND" H 4200 5830 30  0001 C CNN
+F 2 "" H 4200 5900 60  0001 C CNN
+F 3 "" H 4200 5900 60  0001 C CNN
+	1    4200 5900
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_1 P8
+U 1 1 5FCF3F60
+P 4700 5800
+F 0 "P8" H 4780 5800 40  0000 L CNN
+F 1 "GND" H 4700 5855 30  0001 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x01_Pitch2.54mm_SMD_Pin1Left" H 4700 5800 60  0001 C CNN
+F 3 "" H 4700 5800 60  0001 C CNN
+	1    4700 5800
+	1    0    0    -1  
+$EndComp
+NoConn ~ 5000 3450
+NoConn ~ 5000 3350
+$Comp
+L AS5600 U2
+U 1 1 5FE9996D
+P 2300 4300
+F 0 "U2" H 2300 4300 60  0000 C CNN
+F 1 "AS5600" H 2350 4600 60  0000 C CNN
+F 2 "SMD_Packages:SOIC-8-N" H 2300 4300 60  0001 C CNN
+F 3 "" H 2300 4300 60  0001 C CNN
+	1    2300 4300
+	1    0    0    -1  
+$EndComp
+Text GLabel 3350 4650 2    60   BiDi ~ 0
+SDA
+Text GLabel 3350 4500 2    60   BiDi ~ 0
+SCL
+NoConn ~ 1700 4250
+NoConn ~ 2900 4400
+$Comp
+L C C3
+U 1 1 5FE99E5F
+P 1100 4300
+F 0 "C3" H 1100 4400 40  0000 L CNN
+F 1 "100nF" H 1106 4215 40  0000 L CNN
+F 2 "Capacitors_SMD:C_0805" H 1138 4150 30  0001 C CNN
+F 3 "" H 1100 4300 60  0000 C CNN
+	1    1100 4300
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR09
+U 1 1 5FE99F11
+P 1100 4800
+F 0 "#PWR09" H 1100 4800 30  0001 C CNN
+F 1 "GND" H 1100 4730 30  0001 C CNN
+F 2 "" H 1100 4800 60  0001 C CNN
+F 3 "" H 1100 4800 60  0001 C CNN
+	1    1100 4800
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R2
+U 1 1 5FE9A09C
+P 3250 3600
+F 0 "R2" V 3330 3600 40  0000 C CNN
+F 1 "4K7" V 3257 3601 40  0000 C CNN
+F 2 "Capacitors_SMD:C_0805" V 3180 3600 30  0001 C CNN
+F 3 "" H 3250 3600 30  0000 C CNN
+	1    3250 3600
+	1    0    0    -1  
+$EndComp
+$Comp
+L R R1
+U 1 1 5FE9A16A
+P 3100 3600
+F 0 "R1" V 3180 3600 40  0000 C CNN
+F 1 "4K7" V 3107 3601 40  0000 C CNN
+F 2 "Capacitors_SMD:C_0805" V 3030 3600 30  0001 C CNN
+F 3 "" H 3100 3600 30  0000 C CNN
+	1    3100 3600
+	1    0    0    -1  
+$EndComp
+$Comp
+L GND #PWR010
+U 1 1 5FE9A1F6
+P 3800 4000
+F 0 "#PWR010" H 3800 4000 30  0001 C CNN
+F 1 "GND" H 3800 3930 30  0001 C CNN
+F 2 "" H 3800 4000 60  0001 C CNN
+F 3 "" H 3800 4000 60  0001 C CNN
+	1    3800 4000
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_1 P10
+U 1 1 5FE9A696
+P 650 3950
+F 0 "P10" H 730 3950 40  0000 L CNN
+F 1 "3v3" H 650 4005 30  0001 C CNN
+F 2 "Wire_Pads:SolderWirePad_single_0-8mmDrill" H 650 3950 60  0001 C CNN
+F 3 "" H 650 3950 60  0001 C CNN
+	1    650  3950
+	-1   0    0    1   
+$EndComp
+Text GLabel 950  3700 0    60   Input ~ 0
+3v3
+$Comp
+L CONN_1 P12
+U 1 1 5FE9A6A0
+P 3500 4100
+F 0 "P12" H 3580 4100 40  0000 L CNN
+F 1 "SDA" H 3500 4155 30  0001 C CNN
+F 2 "Wire_Pads:SolderWirePad_single_0-8mmDrill" H 3500 4100 60  0001 C CNN
+F 3 "" H 3500 4100 60  0001 C CNN
+	1    3500 4100
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_1 P13
+U 1 1 5FE9A6A6
+P 3500 4250
+F 0 "P13" H 3580 4250 40  0000 L CNN
+F 1 "SCL" H 3500 4305 30  0001 C CNN
+F 2 "Wire_Pads:SolderWirePad_single_0-8mmDrill" H 3500 4250 60  0001 C CNN
+F 3 "" H 3500 4250 60  0001 C CNN
+	1    3500 4250
+	1    0    0    -1  
+$EndComp
+$Comp
+L CONN_1 P11
+U 1 1 5FE9A6B4
+P 650 4650
+F 0 "P11" H 730 4650 40  0000 L CNN
+F 1 "GND" H 650 4705 30  0001 C CNN
+F 2 "Wire_Pads:SolderWirePad_single_0-8mmDrill" H 650 4650 60  0001 C CNN
+F 3 "" H 650 4650 60  0001 C CNN
+	1    650  4650
+	-1   0    0    1   
+$EndComp
 Wire Wire Line
 	6500 3450 6850 3450
 Wire Wire Line
@@ -301,146 +540,77 @@ Connection ~ 6050 2850
 Wire Wire Line
 	5700 4950 5700 5100
 Wire Wire Line
-	5000 3450 4800 3450
-Wire Wire Line
-	5000 3350 4800 3350
-NoConn ~ 5000 3850
-$Comp
-L CONN_1 P1
-U 1 1 5FCE5DF1
-P 4700 5450
-F 0 "P1" H 4780 5450 40  0000 L CNN
-F 1 "SP" H 4700 5505 30  0001 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x01_Pitch2.54mm_SMD_Pin1Left" H 4700 5450 60  0001 C CNN
-F 3 "" H 4700 5450 60  0001 C CNN
-	1    4700 5450
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
 	4300 5450 4550 5450
-NoConn ~ 5000 4250
-$Comp
-L CONN_1 P4
-U 1 1 5FCE66DA
-P 2900 1900
-F 0 "P4" H 2980 1900 40  0000 L CNN
-F 1 "SP" H 2900 1955 30  0001 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x01_Pitch2.54mm_SMD_Pin1Left" H 2900 1900 60  0001 C CNN
-F 3 "" H 2900 1900 60  0001 C CNN
-	1    2900 1900
-	-1   0    0    1   
-$EndComp
-NoConn ~ 5000 4450
-NoConn ~ 10450 2450
-$Comp
-L C C1
-U 1 1 5FCF365C
-P 4300 2250
-F 0 "C1" H 4300 2350 40  0000 L CNN
-F 1 "10nF" H 4306 2165 40  0000 L CNN
-F 2 "Capacitors_SMD:C_0805_HandSoldering" H 4338 2100 30  0001 C CNN
-F 3 "" H 4300 2250 60  0000 C CNN
-	1    4300 2250
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	4700 4150 5000 4150
-NoConn ~ 5000 4050
-Text GLabel 5750 5550 0    60   BiDi ~ 0
-SDA
-Text GLabel 5750 5700 0    60   BiDi ~ 0
-SCL
-$Comp
-L CONN_1 P5
-U 1 1 5FCF3996
-P 6150 5550
-F 0 "P5" H 6230 5550 40  0000 L CNN
-F 1 "SDA" H 6150 5605 30  0001 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x01_Pitch2.54mm_SMD_Pin1Left" H 6150 5550 60  0001 C CNN
-F 3 "" H 6150 5550 60  0001 C CNN
-	1    6150 5550
-	1    0    0    -1  
-$EndComp
-$Comp
-L CONN_1 P6
-U 1 1 5FCF39C7
-P 6150 5700
-F 0 "P6" H 6230 5700 40  0000 L CNN
-F 1 "SCL" H 6150 5755 30  0001 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x01_Pitch2.54mm_SMD_Pin1Left" H 6150 5700 60  0001 C CNN
-F 3 "" H 6150 5700 60  0001 C CNN
-	1    6150 5700
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	5750 5550 6000 5550
 Wire Wire Line
 	5750 5700 6000 5700
-$Comp
-L GND #PWR07
-U 1 1 5FCF3D37
-P 5600 6050
-F 0 "#PWR07" H 5600 6050 30  0001 C CNN
-F 1 "GND" H 5600 5980 30  0001 C CNN
-F 2 "" H 5600 6050 60  0001 C CNN
-F 3 "" H 5600 6050 60  0001 C CNN
-	1    5600 6050
-	1    0    0    -1  
-$EndComp
-$Comp
-L CONN_1 P9
-U 1 1 5FCF3D60
-P 6150 5950
-F 0 "P9" H 6230 5950 40  0000 L CNN
-F 1 "GND" H 6150 6005 30  0001 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x01_Pitch2.54mm_SMD_Pin1Left" H 6150 5950 60  0001 C CNN
-F 3 "" H 6150 5950 60  0001 C CNN
-	1    6150 5950
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	5600 6050 5600 5950
 Wire Wire Line
 	5600 5950 6000 5950
-Text GLabel 4300 5650 0    60   Input ~ 0
-5V
-$Comp
-L CONN_1 P7
-U 1 1 5FCF3E5D
-P 4700 5650
-F 0 "P7" H 4780 5650 40  0000 L CNN
-F 1 "5V" H 4700 5705 30  0001 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x01_Pitch2.54mm_SMD_Pin1Left" H 4700 5650 60  0001 C CNN
-F 3 "" H 4700 5650 60  0001 C CNN
-	1    4700 5650
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	4300 5650 4550 5650
-$Comp
-L GND #PWR08
-U 1 1 5FCF3F31
-P 4200 5900
-F 0 "#PWR08" H 4200 5900 30  0001 C CNN
-F 1 "GND" H 4200 5830 30  0001 C CNN
-F 2 "" H 4200 5900 60  0001 C CNN
-F 3 "" H 4200 5900 60  0001 C CNN
-	1    4200 5900
-	1    0    0    -1  
-$EndComp
-$Comp
-L CONN_1 P8
-U 1 1 5FCF3F60
-P 4700 5800
-F 0 "P8" H 4780 5800 40  0000 L CNN
-F 1 "GND" H 4700 5855 30  0001 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x01_Pitch2.54mm_SMD_Pin1Left" H 4700 5800 60  0001 C CNN
-F 3 "" H 4700 5800 60  0001 C CNN
-	1    4700 5800
-	1    0    0    -1  
-$EndComp
 Wire Wire Line
 	4550 5800 4200 5800
 Wire Wire Line
 	4200 5800 4200 5900
+Wire Wire Line
+	5000 4050 4700 4050
+Wire Wire Line
+	5000 3950 4700 3950
+Wire Wire Line
+	800  3950 1700 3950
+Wire Wire Line
+	1550 3950 1550 4100
+Wire Wire Line
+	1550 4100 1700 4100
+Wire Wire Line
+	1700 4400 1450 4400
+Wire Wire Line
+	1450 4400 1450 4650
+Wire Wire Line
+	1450 4650 800  4650
+Wire Wire Line
+	1100 4500 1100 4800
+Connection ~ 1100 4650
+Connection ~ 1550 3950
+Wire Wire Line
+	1100 4100 1100 3950
+Connection ~ 1100 3950
+Wire Wire Line
+	2900 3950 3800 3950
+Wire Wire Line
+	3800 3950 3800 4000
+Wire Wire Line
+	2900 4100 3350 4100
+Wire Wire Line
+	2900 4250 3350 4250
+Wire Wire Line
+	3100 3850 3100 4650
+Connection ~ 3100 4250
+Wire Wire Line
+	3250 3850 3250 4500
+Connection ~ 3250 4100
+Wire Wire Line
+	3250 3250 3250 3350
+Wire Wire Line
+	1400 3250 3250 3250
+Wire Wire Line
+	1400 3250 1400 3950
+Connection ~ 1400 3950
+Wire Wire Line
+	3100 3350 3100 3250
+Connection ~ 3100 3250
+Wire Wire Line
+	950  3700 1050 3700
+Wire Wire Line
+	1050 3700 1050 3950
+Connection ~ 1050 3950
+Wire Wire Line
+	3250 4500 3350 4500
+Wire Wire Line
+	3100 4650 3350 4650
 $EndSCHEMATC
