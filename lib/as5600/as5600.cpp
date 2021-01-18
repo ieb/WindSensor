@@ -36,7 +36,6 @@ uint16_t As5600L::readTwoBytes(int in_adr_hi, int in_adr_lo)
   Wire.endTransmission();
   Wire.requestFrom(i2c_addr, 1);
   VERBOSE_LN(F("Written, waiting for read byte 1 "));
-  while(Wire.available() == 0);
   int low = Wire.read();
  
   /* Read High Byte */  
@@ -46,7 +45,6 @@ uint16_t As5600L::readTwoBytes(int in_adr_hi, int in_adr_lo)
   Wire.requestFrom(i2c_addr, 1);
   
   VERBOSE_LN(F("Written, waiting for read byte 2"));
-  while(Wire.available() == 0);
   int high = Wire.read();
   if ( high < 0 || low < 0) {
     return 0;
@@ -104,7 +102,6 @@ uint8_t As5600L::readOneByte(int in_adr)
 
   Wire.requestFrom(i2c_addr, 1);
   VERBOSE_LN(F("Written, waiting for read "));
-  while(Wire.available() == 0);
   int retVal = Wire.read();
   if ( retVal < 0 ) {
     return 0;
