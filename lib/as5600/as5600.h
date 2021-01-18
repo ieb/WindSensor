@@ -29,7 +29,9 @@ FakeWire Wire;
 class As5600L {
 
     public:
-        As5600L(int _i2c_addr=0x40, Stream *_debugStream=&Serial, bool _verbose=false);
+        As5600L(int _i2c_addr=0x40);
+        void setDebugStream(Stream *_debugStream=&Serial, bool _verbose=false);
+        void begin(void);
         uint16_t getRawAngle();
         uint16_t getAngle();
         uint16_t getMagnitue();

@@ -1,31 +1,41 @@
 
 #include "as5600.h"
 
-#define VERBOSE_LN(x) if ( verbose ) debugStream->println(x)
-#define VERBOSE(x) if ( verbose ) debugStream->print(x)
+#define VERBOSE_LN(x) if ( debugStream != NULL && verbose ) debugStream->println(x)
+#define VERBOSE(x) if ( debugStream != NULL && verbose ) debugStream->print(x)
+#define DEBUG_LN(x) if ( debugStream != NULL) debugStream->println(x)
+#define DEBUG(x) if ( debugStream != NULL) debugStream->print(x)
 #define AMS_5600_RAW_AND_HI 0x0c
 #define AMS_5600_RAW_AND_LO 0x0d
 #define AMS_5600_STAT 0x0b
 
 
-As5600L::As5600L(int _i2c_addr, Stream *_debugStream, bool _verbose) {
-    debugStream = _debugStream;
+As5600L::As5600L(int _i2c_addr) {
+    debugStream = NULL;
     i2c_addr = _i2c_addr;
+    verbose = false;
+}
+
+void As5600L::setDebugStream(Stream *_debugStream, bool _verbose) {
     verbose = _verbose;
-     Wire.begin();
+    debugStream = _debugStream;
+}
+
+void As5600L::begin(void) {
+  Wire.begin();
 }
 
 
 uint16_t As5600L::readTwoBytes(int in_adr_hi, int in_adr_lo)
 {
-  VERBOSE_LN("Read 2 bytes ");
+  VERBOSE_LN(F("Read 2 bytes "));
  
   /* Read Low Byte */
   Wire.beginTransmission(i2c_addr);
   Wire.write(in_adr_lo);
   Wire.endTransmission();
   Wire.requestFrom(i2c_addr, 1);
-  VERBOSE_LN("Written, waiting for read byte 1 ");
+  VERBOSE_LN(F("Written, waiting for read byte 1 "));
   while(Wire.available() == 0);
   int low = Wire.read();
  
@@ -35,7 +45,7 @@ uint16_t As5600L::readTwoBytes(int in_adr_hi, int in_adr_lo)
   Wire.endTransmission();
   Wire.requestFrom(i2c_addr, 1);
   
-  VERBOSE_LN("Written, waiting for read byte 2");
+  VERBOSE_LN(F("Written, waiting for read byte 2"));
   while(Wire.available() == 0);
   int high = Wire.read();
   if ( high < 0 || low < 0) {
@@ -54,23 +64,23 @@ uint16_t As5600L::readTwoBytes(int in_adr_hi, int in_adr_lo)
 void As5600L::reportTransmission(uint8_t e) {
   switch(e) {
     case 0:
-       VERBOSE_LN("Wire: sucess");
+       VERBOSE_LN(F("Wire: sucess"));
        break;
     case 1:
-       debugStream->println("Wire: length to long for buffer");
+       DEBUG_LN(F("Wire: length to long for buffer"));
        break;
     case 2:
-       debugStream->println("Wire: address send, NACK received");
+       DEBUG_LN(F("Wire: address send, NACK received"));
        break;
     case 3:
-       debugStream->println("Wire: data send, NACK received");
+       DEBUG_LN(F("Wire: data send, NACK received"));
        break;
     case 4:
-       debugStream->println("Wire other twi error (lost bus arbitration, bus error, ..)");
+       DEBUG_LN(F("Wire other twi error (lost bus arbitration, bus error, ..)"));
        break;
     default:
-       debugStream->print("Wire unknown error: ");
-       debugStream->println(e);
+       DEBUG(F("Wire unknown error: "));
+       DEBUG_LN(e);
        break;
   }
 }
@@ -78,11 +88,11 @@ void As5600L::reportTransmission(uint8_t e) {
 
 uint8_t As5600L::readOneByte(int in_adr)
 {
-  VERBOSE_LN("Read 1 byte ");
+  VERBOSE_LN(F("Read 1 byte "));
   for( int i = 0; i < 4; i++ ) {
     Wire.beginTransmission(i2c_addr);
     Wire.write(in_adr);
-    VERBOSE("Write Error ");
+    VERBOSE(F("Write Error "));
     VERBOSE_LN(Wire.getWriteError());
     uint8_t e = Wire.endTransmission();
     reportTransmission(e);
@@ -93,7 +103,7 @@ uint8_t As5600L::readOneByte(int in_adr)
   }
 
   Wire.requestFrom(i2c_addr, 1);
-  VERBOSE_LN("Written, waiting for read ");
+  VERBOSE_LN(F("Written, waiting for read "));
   while(Wire.available() == 0);
   int retVal = Wire.read();
   if ( retVal < 0 ) {

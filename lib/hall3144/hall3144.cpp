@@ -32,8 +32,11 @@ void Hall3144_countPulseInterruptHandler() {
     edges++; 
 }
 
-Hall3144::Hall3144(int _pulsePin) {
+Hall3144::Hall3144(uint8_t _pulsePin) {
   pulsePin = _pulsePin;
+}
+
+void Hall3144::begin() {
   pinMode(pulsePin, INPUT_PULLUP);
   attachInterrupt(digitalPinToInterrupt(pulsePin), Hall3144_countPulseInterruptHandler, FALLING);
 }
