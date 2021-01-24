@@ -191,8 +191,6 @@ F 3 "" H 6300 5250 60  0001 C CNN
 	1    6300 5250
 	1    0    0    -1  
 $EndComp
-Text GLabel 6000 5250 0    60   Input ~ 0
-3v3
 Text Notes 6550 5600 0    60   ~ 0
 Connects to AS5600 i2C device\nwith 10nF Cap between GND and V3v3\nSee data sheet
 Text Notes 8700 2850 0    60   ~ 0
@@ -231,7 +229,6 @@ NoConn ~ 5550 2950
 NoConn ~ 5650 2950
 NoConn ~ 5750 2950
 NoConn ~ 5850 2950
-NoConn ~ 5000 3850
 $Comp
 L CONN_1 P1
 U 1 1 5FCE5DF1
@@ -243,7 +240,6 @@ F 3 "" H 4700 5450 60  0001 C CNN
 	1    4700 5450
 	1    0    0    -1  
 $EndComp
-NoConn ~ 5000 4250
 $Comp
 L CONN_1 P4
 U 1 1 5FCE66DA
@@ -316,8 +312,6 @@ F 3 "" H 6150 5950 60  0001 C CNN
 	1    6150 5950
 	1    0    0    -1  
 $EndComp
-Text GLabel 4300 5650 0    60   Input ~ 0
-5V
 $Comp
 L CONN_1 P7
 U 1 1 5FCF3E5D
@@ -436,8 +430,6 @@ F 3 "" H 650 3950 60  0001 C CNN
 	1    650  3950
 	-1   0    0    1   
 $EndComp
-Text GLabel 950  3700 0    60   Input ~ 0
-3v3
 $Comp
 L CONN_1 P12
 U 1 1 5FE9A6A0
@@ -492,18 +484,13 @@ Wire Wire Line
 Wire Wire Line
 	9700 3600 9850 3600
 Wire Wire Line
-	9700 3200 10250 3200
-Wire Wire Line
-	9800 3200 9800 3300
-Wire Wire Line
-	9800 3300 9700 3300
+	9700 3300 9850 3300
 Wire Wire Line
 	9850 3400 9700 3400
 Wire Wire Line
 	9850 3700 9700 3700
 Wire Wire Line
 	10250 3200 10250 3300
-Connection ~ 9800 3200
 Wire Wire Line
 	6500 3350 6950 3350
 Wire Wire Line
@@ -570,9 +557,9 @@ Wire Wire Line
 Wire Wire Line
 	1700 4400 1450 4400
 Wire Wire Line
-	1450 4400 1450 4650
+	1450 4650 1450 4400
 Wire Wire Line
-	1450 4650 800  4650
+	800  4650 1450 4650
 Wire Wire Line
 	1100 4500 1100 4800
 Connection ~ 1100 4650
@@ -613,4 +600,22 @@ Wire Wire Line
 	3250 4500 3350 4500
 Wire Wire Line
 	3100 4650 3350 4650
+Text GLabel 4700 3850 0    60   Output ~ 0
+SENSOR_EN
+Wire Wire Line
+	4700 3850 5000 3850
+Text GLabel 6000 5250 0    60   Input ~ 0
+SENSOR_EN
+Text GLabel 950  3700 0    60   Input ~ 0
+SENSOR_EN
+Wire Wire Line
+	9700 3200 10250 3200
+Text GLabel 9850 3300 2    60   Input ~ 0
+RFEN
+Text GLabel 4700 4250 0    60   Output ~ 0
+RFEN
+Wire Wire Line
+	5000 4250 4700 4250
+Text GLabel 4300 5650 0    60   Input ~ 0
+SENSOR_EN
 $EndSCHEMATC

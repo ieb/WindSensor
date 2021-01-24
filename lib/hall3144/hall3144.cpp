@@ -14,20 +14,48 @@
  * in a non zero measurement. Hence we expose the time of the last
  * edge so an observer can confirm pulses have been seen since the 
  * last measurement.
+ * 
+ * 
+ * The device being used is a SS451A which is almost the same as a 3144, but operates
+ * at 3v which should allow the sensor to run off a 3.7v LiPo with solar power and
+ * in sleep mode in the future.
+ * 
+ * The current setup has 2 magnets diametrically apposed. Since each magnet is
+ * slightly differnt strength the low pulse width varies between each magnet
+ * which causes the time between pulses to toggle. The measured standard deviation of
+ * the pulses is 0 measured by a scope. On that basis the mesurement mechanism needs to take account of this.
+ * 
+ * There are two approaches that could be used.
+ * Average the pulses, or use 2 counters alternating on each pulse.
+ * 
  */
 
 
-volatile unsigned long lastEdge = micros();
-volatile unsigned long period = 500000;
+volatile unsigned long lastEdge1 = micros();
+volatile unsigned long lastEdge2 = micros();
+volatile unsigned long period1 = 500000;
+volatile unsigned long period2 = 500000;
 volatile unsigned long edges = 0;
 unsigned long edgescount = 0;
 
 void Hall3144_countPulseInterruptHandler() {
-    static unsigned long newEdge = micros();
-    lastEdge = newEdge;
-    newEdge = micros();
-    if (newEdge > lastEdge) {
-      period = newEdge - lastEdge;
+    static unsigned long newEdge1 = micros();
+    static unsigned long newEdge2 = micros();
+    static uint8_t magnet_number = 0;
+    if (magnet_number == 0) {
+      magnet_number = 1;
+      lastEdge1 = newEdge1;
+      newEdge1 = micros();
+      if ( newEdge1 > lastEdge1 ) {
+        period1 = newEdge1 - lastEdge1;
+      }
+    } else {
+      magnet_number = 0;
+      lastEdge2 = newEdge2;
+      newEdge2 = micros();
+      if ( newEdge2 > lastEdge2 ) {
+        period2 = newEdge2 - lastEdge2;
+      }
     }
     edges++; 
 }
@@ -53,11 +81,24 @@ void Hall3144::begin() {
 unsigned long Hall3144::getPeriod() {
     static unsigned long prevCall = micros();
     unsigned long thisCall = micros();
-    noInterrupts();
-    unsigned long p = period;
-    unsigned long le = lastEdge;
+    // fetch the values out of voltile 
+    // dont do any maths here to keep these operations as close
+    // as possible together.
+    unsigned long p1 = period1;
+    unsigned long p2 = period2;
+    unsigned long le1 = lastEdge1;
+    unsigned long le2 = lastEdge2;
     edgescount = edges;
-    interrupts();
+
+
+    
+    if ( p1 > 64000000) p1 = 64000000;
+    if ( p2 > 64000000) p2 = 64000000;
+    // each period is for a full revolution of the magnet
+    // hence period between magnets is sum/4.
+    unsigned long p = (p2+p2)/4;
+    unsigned long le = max(le1,le2);
+
     
     if ( le < prevCall ) {
       // no edge since the last get, increase the
