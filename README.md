@@ -18,11 +18,11 @@ The data sent over RF has 2 forms running at between 5-10Hz, both comma seperate
 
 The protocol is proprietary and compact. A single line of csv readings without interpretation including the reading from the possition sensor 12bit representing 0-360 and the number of nano seconds for half a revolution (64bit).
 
-* Masthead micro controller - Ardiono Pro Mini (18mmx33mm, 8MHz, 3.3v), consuming 30mA @5v
+* Masthead micro controller - Ardiono Pro Mini (18mmx33mm, 8MHz, 3.3v).
 * Angular sensor - AS5600 12bit i2C device sensing a diametrically magnatised magnet
-* Speed sensor - 3144 Hall switch sensing 2 magnets on a shaft triggering interrupts.
+* Speed sensor - SS451 Hall switch sensing 2 magnets on a shaft triggering interrupts.
 * JDY-40 - 2.4GHz RF module running at 9600 baud bursting over a 2Mb/s wifi channel.
-
+* Supply 11-16V
 
 
 Measurements.

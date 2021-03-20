@@ -24,7 +24,7 @@
 
 
 #define COMMA ","
-#define OUTPUT_FORMAT "%2d,%4u,%7.3f,"
+#define OUTPUT_FORMAT "%d,%u,%d.%02d,"
 
 
 
@@ -46,8 +46,7 @@ void blink(int times, uint16_t ms) {
 
 
 
-
-As5600L angleSensor(AMS_5600L_ADDRESS);
+As5600L angleSensor(AMS_5600_ADDRESS);
 Jdy40 jdy40(RF_DATA_EN_PIN);
 Hall3144 pulseSensor(PULSE_PIN);
 SoftwareSerial rf(RF_RX_PIN, RF_TX_PIN);
@@ -124,10 +123,13 @@ void loop(){
        angle = angleSensor.getRawAngle();
     }
     // 01,4096,999.999,
+    int windSpeedN = windSpeed;
+    int windSpeedD = round((windSpeed-windSpeedN)*100);
+
     sprintf(outputBuffer,OUTPUT_FORMAT,
        magnet,
        angle,
-       windSpeed);       
+       windSpeedN,windSpeedD);       
     
     uint16_t checksum = jdy40.writeLine(outputBuffer);
 
@@ -170,6 +172,8 @@ void loop(){
       Serial.print(COMMA);
       Serial.print(calltime);
       Serial.print(COMMA);
+      Serial.print(":");
+      Serial.print(outputBuffer);
       Serial.println(checksum,HEX);
     }
 }

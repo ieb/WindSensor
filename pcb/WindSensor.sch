@@ -54,7 +54,7 @@ F 3 "" H 6000 3800 60  0001 C CNN
 	1    5700 3800
 	1    0    0    -1  
 $EndComp
-Text GLabel 4300 5450 0    60   BiDi ~ 0
+Text GLabel 2150 5750 0    60   BiDi ~ 0
 SPEED
 $Comp
 L GND #PWR01
@@ -99,7 +99,7 @@ RX
 Text GLabel 9850 3400 2    60   Input ~ 0
 DE
 Text GLabel 6950 3350 2    60   Input ~ 0
-5V
+RAWV
 Text Notes 8000 5100 0    60   ~ 0
 Case Mounted
 NoConn ~ 5000 3550
@@ -198,11 +198,11 @@ Text Notes 8700 2850 0    60   ~ 0
 Text Notes 3700 1700 0    60   ~ 0
 Power In
 Text GLabel 4850 1900 2    60   Output ~ 0
-5V
+RAWV
 Text Notes 2900 1750 0    60   ~ 0
-15V-11V in
+16V-11V in
 Text Notes 4750 1800 0    60   ~ 0
-12V-8V
+16V-11V
 $Comp
 L GND #PWR05
 U 1 1 5FCE4E58
@@ -232,13 +232,13 @@ NoConn ~ 5850 2950
 $Comp
 L CONN_1 P1
 U 1 1 5FCE5DF1
-P 4700 5450
-F 0 "P1" H 4780 5450 40  0000 L CNN
-F 1 "SP" H 4700 5505 30  0001 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x01_Pitch2.54mm_SMD_Pin1Left" H 4700 5450 60  0001 C CNN
-F 3 "" H 4700 5450 60  0001 C CNN
-	1    4700 5450
-	1    0    0    -1  
+P 2800 5100
+F 0 "P1" H 2880 5100 40  0000 L CNN
+F 1 "SP" H 2800 5155 30  0001 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x01_Pitch2.54mm_SMD_Pin1Left" H 2800 5100 60  0001 C CNN
+F 3 "" H 2800 5100 60  0001 C CNN
+	1    2800 5100
+	0    -1   -1   0   
 $EndComp
 $Comp
 L CONN_1 P4
@@ -315,35 +315,35 @@ $EndComp
 $Comp
 L CONN_1 P7
 U 1 1 5FCF3E5D
-P 4700 5650
-F 0 "P7" H 4780 5650 40  0000 L CNN
-F 1 "5V" H 4700 5705 30  0001 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x01_Pitch2.54mm_SMD_Pin1Left" H 4700 5650 60  0001 C CNN
-F 3 "" H 4700 5650 60  0001 C CNN
-	1    4700 5650
-	1    0    0    -1  
+P 2500 5100
+F 0 "P7" H 2580 5100 40  0000 L CNN
+F 1 "5V" H 2500 5155 30  0001 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x01_Pitch2.54mm_SMD_Pin1Left" H 2500 5100 60  0001 C CNN
+F 3 "" H 2500 5100 60  0001 C CNN
+	1    2500 5100
+	0    -1   -1   0   
 $EndComp
 $Comp
 L GND #PWR08
 U 1 1 5FCF3F31
-P 4200 5900
-F 0 "#PWR08" H 4200 5900 30  0001 C CNN
-F 1 "GND" H 4200 5830 30  0001 C CNN
-F 2 "" H 4200 5900 60  0001 C CNN
-F 3 "" H 4200 5900 60  0001 C CNN
-	1    4200 5900
+P 1750 5700
+F 0 "#PWR08" H 1750 5700 30  0001 C CNN
+F 1 "GND" H 1750 5630 30  0001 C CNN
+F 2 "" H 1750 5700 60  0001 C CNN
+F 3 "" H 1750 5700 60  0001 C CNN
+	1    1750 5700
 	1    0    0    -1  
 $EndComp
 $Comp
 L CONN_1 P8
 U 1 1 5FCF3F60
-P 4700 5800
-F 0 "P8" H 4780 5800 40  0000 L CNN
-F 1 "GND" H 4700 5855 30  0001 C CNN
-F 2 "Pin_Headers:Pin_Header_Straight_1x01_Pitch2.54mm_SMD_Pin1Left" H 4700 5800 60  0001 C CNN
-F 3 "" H 4700 5800 60  0001 C CNN
-	1    4700 5800
-	1    0    0    -1  
+P 2650 5100
+F 0 "P8" H 2730 5100 40  0000 L CNN
+F 1 "GND" H 2650 5155 30  0001 C CNN
+F 2 "Pin_Headers:Pin_Header_Straight_1x01_Pitch2.54mm_SMD_Pin1Left" H 2650 5100 60  0001 C CNN
+F 3 "" H 2650 5100 60  0001 C CNN
+	1    2650 5100
+	0    -1   -1   0   
 $EndComp
 NoConn ~ 5000 3450
 NoConn ~ 5000 3350
@@ -527,7 +527,7 @@ Connection ~ 6050 2850
 Wire Wire Line
 	5700 4950 5700 5100
 Wire Wire Line
-	4300 5450 4550 5450
+	2150 5750 2950 5750
 Wire Wire Line
 	4700 4150 5000 4150
 Wire Wire Line
@@ -539,11 +539,11 @@ Wire Wire Line
 Wire Wire Line
 	5600 5950 6000 5950
 Wire Wire Line
-	4300 5650 4550 5650
+	2150 5450 2950 5450
 Wire Wire Line
-	4550 5800 4200 5800
+	1750 5600 2950 5600
 Wire Wire Line
-	4200 5800 4200 5900
+	1750 5600 1750 5700
 Wire Wire Line
 	5000 4050 4700 4050
 Wire Wire Line
@@ -557,9 +557,9 @@ Wire Wire Line
 Wire Wire Line
 	1700 4400 1450 4400
 Wire Wire Line
-	1450 4650 1450 4400
+	1450 4400 1450 4650
 Wire Wire Line
-	800  4650 1450 4650
+	1450 4650 800  4650
 Wire Wire Line
 	1100 4500 1100 4800
 Connection ~ 1100 4650
@@ -616,6 +616,26 @@ Text GLabel 4700 4250 0    60   Output ~ 0
 RFEN
 Wire Wire Line
 	5000 4250 4700 4250
-Text GLabel 4300 5650 0    60   Input ~ 0
+Text GLabel 2150 5450 0    60   Input ~ 0
 SENSOR_EN
+$Comp
+L 3144 U?
+U 1 1 603DF19B
+P 3450 5750
+F 0 "U?" H 3500 5950 60  0000 C CNN
+F 1 "S451A Hall Device" H 3550 6300 60  0000 C CNN
+F 2 "" H 3450 5750 60  0001 C CNN
+F 3 "" H 3450 5750 60  0001 C CNN
+	1    3450 5750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2800 5250 2800 5750
+Connection ~ 2800 5750
+Wire Wire Line
+	2650 5250 2650 5600
+Connection ~ 2650 5600
+Wire Wire Line
+	2500 5250 2500 5450
+Connection ~ 2500 5450
 $EndSCHEMATC
